@@ -5,11 +5,22 @@
   "scripts": {
     "test": "node --test",
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "prepack": "npm test && npm run build",
+    "pack:check": "npm pack --dry-run"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "keywords": [
+    "kinhold",
+    "noir",
+    "zero-knowledge",
+    "playground"
+  ],
+  "author": "Kinhold",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "@noir-lang/noir_wasm": "^1.0.0-beta.22"
