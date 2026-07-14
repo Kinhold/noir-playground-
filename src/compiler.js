@@ -1,5 +1,3 @@
-import { compile, createFileManager } from '@noir-lang/noir_wasm';
-
 const PACKAGE_MANIFEST = `[package]
 name = "playground"
 type = "bin"
@@ -15,6 +13,7 @@ export async function compileSource(source) {
     throw new Error('Circuit source must not be empty.');
   }
 
+  const { compile, createFileManager } = await import('@noir-lang/noir_wasm');
   const fileManager = createFileManager('/');
   await fileManager.writeFile('Nargo.toml', asStream(PACKAGE_MANIFEST));
   await fileManager.writeFile('src/main.nr', asStream(source));
