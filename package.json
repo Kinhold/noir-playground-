@@ -1,17 +1,21 @@
 {
   "name": "noir-playground",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Minimal browser UI for compiling a single Noir circuit",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test",
+    "dev": "vite",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "@noir-lang/noir_js": "^1.0.0-beta.22",
     "@noir-lang/noir_wasm": "^1.0.0-beta.22"
-  }
+  },
+  "devDependencies": {
+    "vite": "7.3.6"
+  },
+  "private": true
 }
