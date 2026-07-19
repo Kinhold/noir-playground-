@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Noir Playground - Zero Knowledge Circuit Editor</title>
+    <style>
+        body { background: #0a0a0a; color: #00ff88; font-family: monospace; margin: 0; padding: 20px; }
+        h1 { color: #fff; text-align: center; }
+        .container { max-width: 900px; margin: 0 auto; }
+        textarea { box-sizing: border-box; width: 100%; height: 300px; background: #111; color: #00ff88; border: 1px solid #333; padding: 10px; font-size: 14px; }
+        button { background: #00ff88; color: #000; border: none; padding: 12px 24px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #00cc6a; }
+        button:disabled { cursor: wait; opacity: 0.65; }
+        #output { background: #111; border: 1px solid #333; padding: 15px; margin-top: 15px; min-height: 100px; white-space: pre-wrap; }
+        .error { color: #ff4444; }
+        .success { color: #00ff88; }
+        .note { color: #bbb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Noir Playground</h1>
+        <p>Compile a single Noir circuit in your browser.</p>
+        <p class="note">This checks compilation only. It does not execute, prove, verify, or audit the circuit.</p>
+        <textarea id="code" placeholder="fn main(x: Field, y: Field) {
+    assert(x != y);
+}">fn main(x: Field, y: Field) {
+    assert(x != y);
+}</textarea>
+        <br>
+        <button id="compile" type="button">Compile Circuit</button>
+        <div id="output" role="status" aria-live="polite">Output will appear here...</div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
